@@ -1,0 +1,71 @@
+/* Custom keyframe animations tailored for Tailwind usage */
+
+@keyframes slow-zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.animate-slow-zoom {
+    animation: slow-zoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+}
+
+/* Scroll Reveal Classes */
+.reveal {
+    transition: all 1s ease-out;
+    opacity: 0;
+    /* Default state for JS reveal */
+    transform: translateY(20px);
+}
+
+.reveal.active {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+}
+
+.transition-delay-200 {
+    transition-delay: 200ms;
+}
+
+.transition-delay-400 {
+    transition-delay: 400ms;
+}
+
+/* Custom Scrollbar - White Theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff4d00;
+    /* XAGA Orange */
+}

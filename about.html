@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | XAGA Automotive</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        xaga: {
+                            orange: '#ff4d00', /* Verge-like Orange */
+                            black: '#0a0a0a',
+                            dark: '#141414',
+                            gray: '#f5f5f5', /* Light gray for backgrounds */
+                            text: '#111111'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Michroma', 'sans-serif'],
+                        tech: ['Michroma', 'sans-serif']
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Typography overrides for that premium feel */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            letter-spacing: -0.02em;
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-white text-xaga-text font-sans overflow-x-hidden selection:bg-xaga-orange selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black border-b border-white/10 transition-all duration-300 shadow-lg" id="navbar">
+        <div class="w-full px-6 lg:px-12 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/logo_final.png" class="h-14 w-auto object-contain" alt="XAGA Logo">
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="vigilante5k.html"
+                    class="text-sm font-bold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">VIGILANTE
+                    5K</a>
+                <a href="index.html#technology"
+                    class="text-sm font-bold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Technology</a>
+                <a href="index.html#service"
+                    class="text-sm font-bold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Service</a>
+                <a href="vigilante5k.html#ownership"
+                    class="text-sm font-bold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Ownership</a>
+                <a href="find-store.html"
+                    class="text-sm font-bold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Find
+                    a Store</a>
+                <a href="javascript:void(0)" onclick="toggleModal(true)"
+                    class="px-6 py-2 bg-white text-black hover:bg-xaga-orange hover:text-white transition-all uppercase text-xs font-bold tracking-widest rounded-full">Order
+                    Now</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-white focus:outline-none" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-black/95 transition-opacity duration-300 hidden opacity-0 flex items-center justify-center">
+        <nav class="flex flex-col gap-8 text-center">
+            <a href="vigilante5k.html" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Vigilante
+                5K</a>
+            <a href="index.html#technology" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Technology</a>
+            <a href="index.html#service" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Service</a>
+            <a href="vigilante5k.html#ownership" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Ownership</a>
+            <a href="find-store.html" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Find a
+                Store</a>
+            <a href="javascript:void(0)" onclick="toggleMobileMenu(); toggleModal(true)"
+                class="text-2xl font-tech uppercase text-xaga-orange hover:text-white transition-colors">Order Now</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-[90px] lg:pt-[100px] mb-24 flex-grow">
+
+        <!-- About XAGA Header -->
+        <section class="container mx-auto px-6 py-20 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="font-tech text-5xl md:text-7xl font-bold mb-8 uppercase tracking-widest">About <span
+                        class="text-xaga-orange">XAGA</span></h1>
+                <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
+                    Based in Bangalore, XAGA is a forward-thinking manufacturer committed to redefining electric
+                    motorcycles through a fusion of cutting-edge design and advanced engineering. The company’s flagship
+                    model, the <span class="font-bold border-b-2 border-xaga-orange pb-1 whitespace-nowrap">VIGILANTE
+                        5K</span>, has been purposefully engineered as a premier urban mobility solution.
+                </p>
+
+                <div class="w-16 h-1 bg-xaga-orange mx-auto mt-12 mb-12"></div>
+            </div>
+        </section>
+
+        <!-- Innovation Intro -->
+        <section class="container mx-auto px-6 pb-20 text-center">
+            <div class="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100">
+                <p class="text-lg md:text-xl font-medium leading-relaxed text-gray-700 italic">
+                    "The shift toward electric mobility isn't just a change in fuel; it’s a total redesign of how we
+                    move."
+                </p>
+                <p class="text-gray-500 mt-6 text-sm md:text-base uppercase tracking-widest font-bold">
+                    Here is a rephrased look at the themes driving XAGA's innovation:
+                </p>
+            </div>
+        </section>
+
+        <!-- Three Pillars of Innovation -->
+        <section class="container mx-auto px-6 pb-24">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+
+                <!-- Pillar 1 -->
+                <div
+                    class="bg-black text-white p-10 rounded-2xl shadow-xl hover:-translate-y-2 transition-transform duration-500 border-t-4 border-xaga-orange flex flex-col items-center text-center">
+                    <div class="h-16 w-16 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-xaga-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="font-tech text-2xl font-bold mb-4 uppercase">Rising Demand for <span
+                            class="text-xaga-orange block mt-2 text-xl">Sustainable Mobility</span></h3>
+                    <div class="w-8 h-1 bg-xaga-orange mb-6"></div>
+                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                        The accelerating pivot toward electric two-wheelers highlights a global appetite for
+                        eco-friendly, efficient urban transport. XAGA has met this challenge by developing solutions
+                        that align with the modern commuter’s environmental and performance expectations.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div
+                    class="bg-black text-white p-10 rounded-2xl shadow-xl hover:-translate-y-2 transition-transform duration-500 border-t-4 border-xaga-orange flex flex-col items-center text-center">
+                    <div class="h-16 w-16 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-xaga-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="font-tech text-2xl font-bold mb-4 uppercase">Patented Monocoque <span
+                            class="text-xaga-orange block mt-2 text-xl">Chassis Innovation</span></h3>
+                    <div class="w-8 h-1 bg-xaga-orange mb-6"></div>
+                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                        By leveraging a proprietary monocoque chassis design, XAGA has redefined structural integrity.
+                        This engineering breakthrough allows for the integration of lightweight, high-carbon steel,
+                        significantly enhancing vehicle durability, agility, and long-term performance.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div
+                    class="bg-black text-white p-10 rounded-2xl shadow-xl hover:-translate-y-2 transition-transform duration-500 border-t-4 border-xaga-orange flex flex-col items-center text-center">
+                    <div class="h-16 w-16 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-xaga-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-tech text-2xl font-bold mb-4 uppercase">High-Performance <span
+                            class="text-xaga-orange block mt-2 text-xl">Powertrains</span></h3>
+                    <div class="w-8 h-1 bg-xaga-orange mb-6"></div>
+                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                        To satisfy the market’s demand for power, XAGA has engineered advanced Hub Motors. These
+                        powertrains are designed to bridge the gap between efficiency and excitement, offering riders
+                        higher top speeds and significantly extended ranges.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pre-Order Modal -->
+    <div id="preOrderModal" class="fixed inset-0 z-[100] hidden opacity-0 transition-opacity duration-300" role="dialog"
+        aria-modal="true">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="toggleModal(false)"></div>
+
+        <!-- Modal Content -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl bg-white text-black shadow-2xl flex flex-col md:flex-row rounded-lg overflow-hidden scale-95 transition-transform duration-300"
+            id="modalContent">
+
+            <!-- Close Button (Mobile & Desktop) -->
+            <button onclick="toggleModal(false)"
+                class="absolute top-4 right-4 z-[60] p-2 bg-white/50 rounded-full hover:bg-white text-black">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Left: Product Image -->
+            <div class="w-full md:w-1/2 bg-gray-100 relative flex items-center justify-center p-0 overflow-hidden">
+                <img src="assets/bike_poster.jpg" alt="XAGA VIGILANTE 5K" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Right: Form -->
+            <div class="w-full md:w-1/2 p-8 md:p-12 relative flex flex-col justify-center">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-2 font-tech uppercase">Order Now</h2>
+                    <p class="text-gray-500 text-sm">
+                        Experience the new era of performance.
+                    </p>
+                </div>
+
+                <form
+                    onsubmit="event.preventDefault(); alert('We have received your request! A specialist will contact you shortly.'); toggleModal(false);"
+                    class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Full Name</label>
+                        <input type="text" required
+                            class="w-full bg-gray-50 border-b-2 border-gray-200 px-0 py-2 text-sm focus:outline-none focus:border-xaga-orange transition-all text-black placeholder-gray-400">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Phone Number</label>
+                        <input type="tel" required
+                            class="w-full bg-gray-50 border-b-2 border-gray-200 px-0 py-2 text-sm focus:outline-none focus:border-xaga-orange transition-all text-black placeholder-gray-400">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Email</label>
+                        <input type="email" required
+                            class="w-full bg-gray-50 border-b-2 border-gray-200 px-0 py-2 text-sm focus:outline-none focus:border-xaga-orange transition-all text-black placeholder-gray-400">
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit"
+                            class="w-full bg-black text-white font-bold py-4 uppercase tracking-widest hover:bg-xaga-orange hover:text-white transition-all shadow-lg text-sm">
+                            Confirm Interest
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-white border-t border-gray-200 pt-16 pb-8 mt-auto">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 group mb-4">
+                        <img src="assets/logo_final.png" class="h-14 w-auto object-contain" alt="XAGA Logo">
+                    </a>
+                    <p class="text-gray-500 mt-4 max-w-xs">Redefining urban freedom with sustainable, high-performance
+                        electric mobility.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+                    <div>
+                        <h4 class="font-bold uppercase tracking-widest text-sm mb-6">Company</h4>
+                        <ul class="space-y-4 text-sm text-gray-600">
+                            <li><a href="about.html" class="hover:text-xaga-orange">About Us</a></li>
+                            <li><a href="#" class="hover:text-xaga-orange">Careers</a></li>
+                            <li><a href="#" class="hover:text-xaga-orange">Press</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold uppercase tracking-widest text-sm mb-6">Models</h4>
+                        <ul class="space-y-4 text-sm text-gray-600">
+                            <li><a href="vigilante5k.html" class="hover:text-xaga-orange">VIGILANTE 5K</a></li>
+                            <li><a href="#" class="hover:text-xaga-orange">Fleet</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold uppercase tracking-widest text-sm mb-6">Support</h4>
+                        <ul class="space-y-4 text-sm text-gray-600">
+                            <li><a href="#" class="hover:text-xaga-orange">Contact</a></li>
+                            <li><a href="#" class="hover:text-xaga-orange">Find Store</a></li>
+                            <li><a href="#" class="hover:text-xaga-orange">Warranty</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 XAGA Automotive. All Rights Reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="https://www.instagram.com/xagaautomotive?igsh=NnRyeGJrdjRuZXh2" target="_blank"
+                        class="hover:text-xaga-orange transition-colors duration-300" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 4.6c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="hover:text-xaga-orange transition-colors duration-300" aria-label="Twitter">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                        </svg>
+                    </a>
+                    <a href="#" class="hover:text-xaga-orange transition-colors duration-300" aria-label="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Modal functionality manually added to ensure it works without script.js if needed
+        function toggleModal(show) {
+            const modal = document.getElementById('preOrderModal');
+            const content = document.getElementById('modalContent');
+            if (show) {
+                modal.classList.remove('hidden');
+                // Small delay to allow display block to process before opacity class transition
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    content.classList.remove('scale-95');
+                    content.classList.add('scale-100');
+                }, 10);
+            } else {
+                modal.classList.add('opacity-0');
+                content.classList.remove('scale-100');
+                content.classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                setTimeout(() => menu.classList.remove('opacity-0'), 10);
+            } else {
+                menu.classList.add('opacity-0');
+                setTimeout(() => menu.classList.add('hidden'), 300);
+            }
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+    </script>
+</body>
+
+</html>

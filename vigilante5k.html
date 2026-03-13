@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIGILANTE 5K | XAGA Automotive</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        xaga: {
+                            orange: '#ff4d00',
+                            black: '#0a0a0a',
+                            dark: '#141414',
+                            gray: '#f5f5f5',
+                            text: '#111111'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Michroma', 'sans-serif'],
+                        tech: ['Michroma', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-white text-xaga-text font-sans overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black border-b border-white/10 transition-all duration-300 shadow-lg" id="navbar">
+        <div class="w-full px-6 lg:px-12 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/logo_final.png" class="h-14 w-auto object-contain" alt="XAGA Logo">
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="vigilante5k.html"
+                    class="text-sm font-semibold uppercase tracking-wider text-xaga-orange">VIGILANTE
+                    5K</a>
+                <a href="#technology"
+                    class="text-sm font-semibold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Technology</a>
+                <a href="#service"
+                    class="text-sm font-semibold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Service</a>
+                <a href="#ownership"
+                    class="text-sm font-semibold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Ownership</a>
+                <a href="find-store.html"
+                    class="text-sm font-semibold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Find
+                    a Store</a>
+                <a href="javascript:void(0)" onclick="toggleModal(true)"
+                    class="px-6 py-2 bg-white text-black hover:bg-xaga-orange hover:text-white transition-all uppercase text-xs font-bold tracking-widest rounded-full">Order
+                    Now</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-white focus:outline-none" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-black/95 transition-opacity duration-300 hidden opacity-0 flex items-center justify-center">
+        <nav class="flex flex-col gap-8 text-center">
+            <a href="index.html" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Home</a>
+            <a href="#" onclick="toggleMobileMenu()" class="text-2xl font-tech uppercase text-xaga-orange">Vigilante
+                5K</a>
+            <a href="#technology" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Technology</a>
+            <a href="#service" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Service</a>
+            <a href="#ownership" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Ownership</a>
+            <a href="find-store.html" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Find a
+                Store</a>
+            <a href="javascript:void(0)" onclick="toggleMobileMenu(); toggleModal(true)"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Order Now</a>
+        </nav>
+    </div>
+
+    <!-- Product Title Header -->
+    <header class="flex flex-col justify-center h-[75vh] pt-16 pb-12 w-full px-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 z-[-1] pointer-events-none flex items-center justify-center opacity-70">
+            <img src="assets/XAGA_Vigilante_Banner.jpeg" alt="Vigilante 5K Background" style="mix-blend-mode: multiply;"
+                class="w-full h-full object-cover">
+        </div>
+
+        <img src="assets/vigilante5k.png" alt="Vigilante 5K"
+            class="h-20 sm:h-28 md:h-36 lg:h-44 xl:h-48 object-contain absolute top-8 left-6 md:top-12 md:left-12 max-w-[200px] md:max-w-[300px] animate-fade-in-up z-20"
+            style="animation-delay: 100ms;">
+        <p class="text-sm md:text-lg text-white max-w-sm w-auto absolute top-24 right-6 md:top-32 md:right-12 text-right animate-fade-in-up z-20 mt-1"
+            style="animation-delay: 200ms;">
+            The definitive electric motorcycle. Sculpted for aerodynamics, engineered for thrill.
+        </p>
+    </header>
+
+
+
+    <!-- Technical Highlights & Overview -->
+    <section id="technology" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16 items-start">
+                <div class="w-full md:w-1/2 sticky top-24">
+                    <h2 class="font-tech text-4xl md:text-5xl font-bold mb-6">Engineered for <br><span
+                            class="text-xaga-orange">The City</span></h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        At its core lies a high-carbon steel monocoque chassis, expertly balancing structural integrity
+                        with a lightweight profile for superior agility. Every curve is calculated to slice through the
+                        air with minimal resistance.
+                    </p>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <div
+                                class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Long-Range Durability</h4>
+                                <p class="text-sm text-gray-500">LFP (Lithium Iron Phosphate) battery designed for
+                                    2,000+ charge cycles.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div
+                                class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Inclusive Ergonomics</h4>
+                                <p class="text-sm text-gray-500">Low-slung seat height to accommodate riders of all
+                                    physiques comfortably.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div
+                                class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Modern Interface</h4>
+                                <p class="text-sm text-gray-500">Optional high-resolution, full-color display for
+                                    real-time data.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/2 grid gap-6 relative">
+                    <img src="assets/XAGA_VIGILANTE.png" alt="XAGA Profile"
+                        class="w-full h-auto object-cover rounded-2xl shadow-xl">
+                    <div class="bg-black text-white p-8 rounded-2xl">
+                        <h3 class="font-tech text-2xl font-bold mb-4">Why it matters</h3>
+                        <p class="text-gray-400">The Vigilante 5K isn't just a commuter; it's a high-tech tool built to
+                            navigate the complexities of modern urban infrastructure with ease and longevity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Section -->
+    <section class="py-24 bg-white text-black overflow-hidden relative">
+        <!-- Background Elements -->
+        <div
+            class="absolute top-0 right-0 w-1/2 h-full bg-gradient-radial from-xaga-orange/10 to-transparent opacity-50 pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-xaga-orange font-bold uppercase tracking-widest text-sm mb-2 block">Performance &
+                    Efficiency</span>
+                <h2 class="font-tech text-4xl md:text-6xl font-bold">The 5000W Hub Motor</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-gray-50 border border-gray-100 p-8 rounded-2xl hover:bg-gray-100 transition-colors group shadow-sm">
+                    <h3
+                        class="font-tech text-5xl font-bold text-xaga-orange mb-2 group-hover:scale-110 transition-transform origin-left">
+                        85<span class="text-2xl text-black ml-2">KMPH</span></h3>
+                    <h4 class="font-bold text-xl mb-4 text-black">Exceptional Velocity</h4>
+                    <p class="text-gray-600 text-sm md:text-base">Reach top speeds allowing you to keep pace with
+                        highway traffic and
+                        clear urban bottlenecks with ease.</p>
+                </div>
+                <div
+                    class="bg-gray-50 border border-gray-100 p-8 rounded-2xl hover:bg-gray-100 transition-colors group shadow-sm">
+                    <h3
+                        class="font-tech text-5xl font-bold text-xaga-orange mb-2 group-hover:scale-110 transition-transform origin-left">
+                        150<span class="text-2xl text-black ml-2">KM</span></h3>
+                    <h4 class="font-bold text-xl mb-4 text-black">Extended Range</h4>
+                    <p class="text-gray-600 text-sm md:text-base">Cover up to 150 km on a single charge. A reliable
+                        partner for daily
+                        commutes and weekend explorations.</p>
+                </div>
+                <div
+                    class="bg-gray-50 border border-gray-100 p-8 rounded-2xl hover:bg-gray-100 transition-colors group shadow-sm">
+                    <h3
+                        class="font-tech text-5xl font-bold text-xaga-orange mb-2 group-hover:scale-110 transition-transform origin-left">
+                        100<span class="text-2xl text-black ml-2">%</span></h3>
+                    <h4 class="font-bold text-xl mb-4 text-black">Direct-Drive Precision</h4>
+                    <p class="text-gray-600 text-sm md:text-base">Hub-integrated design minimizes energy loss. Every
+                        watt translates
+                        into smooth, silent acceleration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Excellence Section -->
+    <section class="bg-gray-50 text-xaga-text pt-16 pb-8 border-t border-gray-200 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 pointer-events-none opacity-20"
+            style="background-image: radial-gradient(#d1d5db 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 -left-64 w-[500px] h-[500px] bg-xaga-orange/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 -right-64 w-[500px] h-[500px] bg-gray-300/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-20 cursor-default px-2">
+                <span
+                    class="text-xaga-orange font-bold uppercase tracking-widest text-sm mb-4 block tracking-[0.2em]">Engineering</span>
+                <h2 class="font-tech text-3xl sm:text-4xl md:text-7xl font-black uppercase text-black leading-tight">
+                    Unmatched <br class="hidden md:block" /><span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-gray-500 to-gray-300 block md:inline mt-2 md:mt-0">Precision</span>
+                </h2>
+            </div>
+
+            <!-- Feature 1: Chassis / Frame -->
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16 mb-8 group">
+                <div class="w-full md:w-1/2 flex justify-center relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-gray-200 to-transparent rounded-2xl transform rotate-3 scale-105 opacity-50 transition-transform group-hover:rotate-6">
+                    </div>
+                    <div
+                        class="relative rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 transform group-hover:scale-[1.02] bg-white border border-gray-100">
+                        <img src="assets/XAGA_ElectroFlow.jpg" alt="Aerodynamic Mastery"
+                            class="max-w-full h-auto scale-[1.02] origin-center">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 relative z-10">
+                    <div class="w-12 h-1 bg-xaga-orange mb-6"></div>
+                    <h3 class="font-tech text-3xl md:text-4xl font-bold mb-6 text-black uppercase tracking-tight">
+                        Aerodynamic Mastery</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        To ensure peak performance at high speeds, the Vigilante 5K integrates aerodynamic styling and
+                        weight-saving engineering. Every surface is sculpted to slice through the air, minimizing drag
+                        and maximizing range.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2: Monocoque Chassis -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16 mb-8 group">
+                <div class="w-full md:w-1/2 flex justify-center relative">
+                    <div
+                        class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-gray-200/50 to-transparent blur-xl rounded-full">
+                    </div>
+                    <img src="assets/Chassis_Transparent.png" alt="Monocoque Chassis"
+                        class="max-w-full h-auto drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] group-hover:scale-[1.05] transition-transform duration-700 relative z-10">
+                </div>
+                <div class="w-full md:w-1/2 relative z-10">
+                    <div class="w-12 h-1 bg-xaga-orange mb-6 md:ml-auto md:mr-0"></div>
+                    <h3
+                        class="font-tech text-3xl md:text-4xl font-bold mb-6 md:text-right text-black uppercase tracking-tight">
+                        Monocoque Chassis</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed md:text-right">
+                        Patented high-carbon steel monocoque chassis balances structural integrity with a lightweight
+                        profile for superior agility and safety.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 3: Battery -->
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16 mb-8 group">
+                <div class="w-full md:w-1/2 flex justify-center relative">
+                    <div
+                        class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-gray-200/50 to-transparent blur-xl rounded-full">
+                    </div>
+                    <img src="assets/Battery_Transparent.png" alt="LFP Power Architecture"
+                        class="max-w-full h-auto drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] transition-transform duration-700 transform group-hover:scale-[1.05] relative z-10">
+                </div>
+                <div class="w-full md:w-1/2 relative z-10">
+                    <div class="w-12 h-1 bg-xaga-orange mb-6"></div>
+                    <h3 class="font-tech text-3xl md:text-4xl font-bold mb-6 text-black uppercase tracking-tight">LFP
+                        Power Architecture</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Powered by an advanced LFP (Lithium Iron Phosphate) battery, engineered to maintain exceptional
+                        health after 2,000+ charge cycles while delivering consistent power output.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 4: Powertrain / Motor -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16 mb-8 group">
+                <div class="w-full md:w-1/2 flex justify-center relative">
+                    <div
+                        class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-gray-200/50 to-transparent blur-xl rounded-full">
+                    </div>
+                    <img src="assets/HubMotor_Transparent.png" alt="Direct-Drive Precision"
+                        class="w-4/5 md:w-3/4 h-auto drop-shadow-[0_20px_20px_rgba(0,0,0,0.2)] opacity-90 group-hover:opacity-100 transition-all duration-700 transform group-hover:-rotate-3 group-hover:scale-105 relative z-10">
+                </div>
+                <div class="w-full md:w-1/2 relative z-10">
+                    <div class="w-12 h-1 bg-xaga-orange mb-6 md:ml-auto md:mr-0"></div>
+                    <h3
+                        class="font-tech text-3xl md:text-4xl font-bold mb-6 md:text-right text-black uppercase tracking-tight">
+                        Direct-Drive Precision</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6 md:text-right">
+                        The hub-integrated design minimizes mechanical complexity and energy loss, ensuring every watt
+                        translates into smooth, silent, and instantaneous acceleration.
+                    </p>
+                    <ul class="space-y-3 font-tech text-gray-700 md:text-right font-medium">
+                        <li class="flex items-center md:justify-end gap-3"><span
+                                class="w-2 h-2 rounded-full bg-xaga-orange inline-block"></span> Silent Operation</li>
+                        <li class="flex items-center md:justify-end gap-3"><span
+                                class="w-2 h-2 rounded-full bg-xaga-orange inline-block"></span> Zero Transmission Loss
+                        </li>
+                        <li class="flex items-center md:justify-end gap-3"><span
+                                class="w-2 h-2 rounded-full bg-xaga-orange inline-block"></span> Instant Torque Delivery
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 5: Safety / Brakes -->
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16 group">
+                <div class="w-full md:w-1/2 flex justify-center relative">
+                    <div
+                        class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-gray-200/50 to-transparent blur-xl rounded-full">
+                    </div>
+                    <img src="assets/DiscBrake_Transparent.png" alt="Safety Disc Brakes"
+                        class="w-2/3 md:w-1/2 h-auto drop-shadow-[0_20px_20px_rgba(0,0,0,0.2)] transition-transform duration-700 transform group-hover:scale-[1.05] mx-auto relative z-10">
+                </div>
+                <div class="w-full md:w-1/2 relative z-10">
+                    <div class="w-12 h-1 bg-xaga-orange mb-6"></div>
+                    <h3 class="font-tech text-3xl md:text-4xl font-bold mb-6 text-black uppercase tracking-tight">
+                        Confidence in Control</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Engineered for confidence, the dual disc brake system ensures controlled modulation and precise
+                        stopping performance under any urban condition.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost of Ownership Section -->
+    <section id="ownership" class="py-24 bg-white relative overflow-hidden">
+        <!-- Decorative Background Blur -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gray-100 rounded-full blur-3xl opacity-50 pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <span
+                    class="bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4 inline-block">Smart
+                    Choice</span>
+                <h2 class="font-tech text-4xl md:text-5xl font-bold mb-6">The Financial Advantage</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Stop burning money. The Vigilante 5K isn't just faster; it pays for itself.
+                </p>
+            </div>
+
+            <!-- Main Comparison Block -->
+            <div class="max-w-6xl mx-auto relative">
+                <!-- Central VS Text (Desktop) -->
+                <div
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-center justify-center">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full shadow-xl flex items-center justify-center border-4 border-gray-100">
+                        <span class="font-black italic text-xl">VS</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                    <!-- Petrol Side -->
+                    <div class="bg-gray-50 rounded-3xl p-8 border border-gray-200 relative group overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10">
+                            <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.14 12.94c.04-.3.06-.61.06-.94 0-3.87-3.13-7-7-7s-7 3.13-7 7c0 .33.02.64.06.94l5.94 10.06h2l5.94-10.06zM12 10a2 2 0 100 4 2 2 0 000-4z" />
+                            </svg>
+                        </div>
+
+                        <h3 class="font-bold text-gray-400 uppercase tracking-widest mb-2">Petrol Scooter (150cc)</h3>
+                        <div class="text-4xl md:text-5xl font-black text-gray-800 mb-6 font-tech">₹2,97,640</div>
+
+                        <!-- Cost Breakdown Items -->
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-4 text-red-600">
+                                <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                <span class="font-bold">High Fuel Cost</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-gray-600">
+                                <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                </svg>
+                                <span>Frequent Maintenance (Oil, Filters)</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-gray-600">
+                                <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Engine Repairs</span>
+                            </div>
+                        </div>
+
+                        <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-red-500 w-full animate-pulse"></div>
+                        </div>
+                        <p class="text-right text-xs font-bold text-red-500 mt-2">Cumulative cost rises rapidly</p>
+                    </div>
+
+                    <!-- XAGA Side -->
+                    <div
+                        class="bg-black text-white rounded-3xl p-8 border border-xaga-orange/30 relative overflow-hidden shadow-2xl">
+                        <div
+                            class="absolute top-0 right-0 w-64 h-64 bg-xaga-orange/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+                        </div>
+
+                        <h3 class="font-bold text-xaga-orange uppercase tracking-widest mb-2">Vigilante 5K</h3>
+                        <div class="text-4xl md:text-5xl font-black text-white mb-6 font-tech">₹23,000</div>
+
+                        <!-- Cost Breakdown Items -->
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-4 text-green-400">
+                                <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                <span class="font-bold">Low Electricity Cost</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-gray-300">
+                                <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Minimal Servicing (No Oil/Filters)</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-gray-300">
+                                <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                                <span>Durable LFP Battery (2000+ Cycles)</span>
+                            </div>
+                        </div>
+
+                        <div class="h-2 w-full bg-white/20 rounded-full overflow-hidden">
+                            <div class="h-full bg-green-500 w-[8%]"></div>
+                        </div>
+                        <p class="text-right text-xs font-bold text-green-400 mt-2">Cost remains minimal</p>
+                    </div>
+                </div>
+
+                <!-- Highlight Banner -->
+                <div
+                    class="mt-16 bg-black rounded-3xl p-12 text-center text-white relative overflow-hidden shadow-2xl border border-white/10">
+                    <!-- Background blobs -->
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-xaga-orange/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-xaga-orange/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2">
+                    </div>
+
+                    <div class="relative z-10 max-w-4xl mx-auto">
+                        <h2 class="font-tech text-4xl md:text-5xl font-bold mb-6 tracking-tight">Break even in just 17
+                            months.</h2>
+                        <p class="text-gray-400 text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto">
+                            Compare the total cost of ownership against traditional petrol scooters and see why electric
+                            is the strategic choice.
+                        </p>
+
+                        <a href="javascript:void(0)"
+                            onclick="document.querySelector('svg').scrollIntoView({behavior: 'smooth'})"
+                            class="inline-block bg-white text-black px-8 py-4 font-bold rounded-lg shadow-lg hover:bg-xaga-orange hover:text-white transition-colors uppercase tracking-widest text-sm">
+                            See Full Cost Analysis
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SVG Graph -->
+                <div class="mt-16 bg-gray-50 rounded-2xl p-6 md:p-12 border border-gray-100">
+                    <h4 class="text-2xl font-bold mb-8 text-center font-tech">Cumulative Cost Projection</h4>
+                    <div class="relative w-full aspect-[16/9] md:aspect-[21/9]">
+                        <svg class="w-full h-full" viewBox="0 0 1000 400" preserveAspectRatio="none">
+                            <!-- Grid Lines -->
+                            <line x1="50" y1="350" x2="950" y2="350" stroke="#e5e7eb" stroke-width="1" />
+                            <line x1="50" y1="275" x2="950" y2="275" stroke="#e5e7eb" stroke-width="1"
+                                stroke-dasharray="4" />
+                            <line x1="50" y1="200" x2="950" y2="200" stroke="#e5e7eb" stroke-width="1"
+                                stroke-dasharray="4" />
+                            <line x1="50" y1="125" x2="950" y2="125" stroke="#e5e7eb" stroke-width="1"
+                                stroke-dasharray="4" />
+                            <line x1="50" y1="50" x2="950" y2="50" stroke="#e5e7eb" stroke-width="1"
+                                stroke-dasharray="4" />
+
+                            <!-- X Axis Labels -->
+                            <text x="50" y="380" class="text-xs fill-gray-400" text-anchor="middle">Year 0</text>
+                            <text x="275" y="380" class="text-xs fill-gray-400" text-anchor="middle">Year 1</text>
+                            <text x="500" y="380" class="text-xs fill-gray-400" text-anchor="middle">Year 2</text>
+                            <text x="725" y="380" class="text-xs fill-gray-400" text-anchor="middle">Year 4</text>
+                            <text x="950" y="380" class="text-xs fill-gray-400" text-anchor="middle">Year 5</text>
+
+                            <!-- Petrol Curve (Rising Steeply) -> Starts at Bike Cost (say 1L) + Fuel -->
+                            <!-- Let's assume Petrol Bike Initial Cost is ~1L. 5 Years total ~3L. So End is high. -->
+                            <!-- Path: M startX startY Q controlX controlY endX endY -->
+                            <path d="M 50 300 Q 500 250 950 50" fill="none" class="stroke-red-500" stroke-width="4" />
+                            <!-- Fill below petrol curve -->
+                            <path d="M 50 300 Q 500 250 950 50 L 950 350 L 50 350 Z" class="fill-red-500/5" />
+
+                            <!-- Electric Curve (Flat) -> Starts at Bike Cost (1.35L - assuming premium but text says 23k ownership cost relative to fuel?) 
+                                 Wait, text says "23,000" refers to "Low Electricity Cost" vs "2,97,640" (which implies TCO diff or Fuel cost). 
+                                 Usually comparisons compare Running Cost. 
+                                 The graph in the image shows total accumulated cost. 
+                                 Let's make the electric line start slightly higher (purchase price) but stay flat. 
+                                 Petrol starts lower but crosses it fast. 
+                                 However, the user's text emphasized "23,000" as the cost *vs* "2,97,640". That 23k is likely JUST electricity cost. 
+                                 Let's label the lines clearly.
+                            -->
+                            <path d="M 50 320 L 950 290" fill="none" class="stroke-green-500" stroke-width="4" />
+                            <path d="M 50 320 L 950 290 L 950 350 L 50 350 Z" class="fill-green-500/5" />
+
+                            <!-- Points -->
+                            <circle cx="950" cy="50" r="6" class="fill-red-500" />
+                            <circle cx="950" cy="290" r="6" class="fill-green-500" />
+
+                            <!-- Labels on graph end -->
+                            <text x="940" y="35" class="text-sm font-bold fill-red-600" text-anchor="end">Petrol:
+                                ₹2.97L</text>
+                            <text x="940" y="275" class="text-sm font-bold fill-green-600" text-anchor="end">XAGA: ₹23k
+                                (Running)</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategic Vision (Preserved) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
+                <div class="p-6 border-l-2 border-gray-200 hover:border-xaga-orange transition-colors">
+                    <h4 class="font-bold text-lg mb-2">Sustainable Mobility</h4>
+                    <p class="text-gray-500 text-sm">Aligning with the modern commuter’s environmental expectations
+                        without sacrificing performance.</p>
+                </div>
+                <div class="p-6 border-l-2 border-gray-200 hover:border-xaga-orange transition-colors">
+                    <h4 class="font-bold text-lg mb-2">Chassis Innovation</h4>
+                    <p class="text-gray-500 text-sm">Patented monocoque design redefining structural integrity and
+                        durability.</p>
+                </div>
+                <div class="p-6 border-l-2 border-gray-200 hover:border-xaga-orange transition-colors">
+                    <h4 class="font-bold text-lg mb-2">Future-Ready Powertrains</h4>
+                    <p class="text-gray-500 text-sm">Bridging the gap between efficiency and excitement with high-speed
+                        hub motors.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="test-drive.html"
+                    class="inline-block bg-black text-white px-12 py-5 font-bold uppercase tracking-widest hover:bg-xaga-orange transition-all shadow-xl hover:-translate-y-1">
+                    Book a Test Ride
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service & Support Section (White Theme) -->
+    <section id="service" class="py-24 bg-white relative z-10 transition-colors">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 relative">
+                    <div class="absolute -top-10 -left-10 w-24 h-24 bg-xaga-orange/10 rounded-full blur-2xl"></div>
+                    <img src="assets/bike_lifestyle.jpg" alt="XAGA Ownership"
+                        class="w-full h-auto rounded-lg shadow-2xl relative z-10 transform hover:scale-[1.02] transition-transform duration-500">
+                </div>
+
+                <div class="order-1 md:order-2">
+                    <span class="text-xaga-orange font-bold uppercase tracking-widest text-sm mb-2 block">Minimum
+                        Maintenance</span>
+                    <h2 class="font-tech text-4xl md:text-5xl font-black mb-6 leading-tight uppercase text-black">
+                        Delivered Ready. <br>Backed for Years.
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Every XAGA is delivered fully assembled, tested, and ready to ride. Each one is backed by
+                        warranty, built with modular components for easy upgrades, and supported globally so you're
+                        never left waiting.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-1 bg-xaga-orange flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-lg text-black">Delivered Road-Ready</h4>
+                                <p class="text-sm text-gray-500 mt-1">Direct to your doorstep, fully charged.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-1 bg-gray-200 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-lg text-black">3-Year Powertrain Warranty</h4>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-1 bg-gray-200 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-lg text-black">Global Service Network</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Order Modal (Reused) -->
+    <div id="preOrderModal" class="fixed inset-0 z-[100] hidden opacity-0 transition-opacity duration-300" role="dialog"
+        aria-modal="true">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="toggleModal(false)"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl max-h-[90vh] bg-white text-black shadow-2xl flex flex-col md:flex-row rounded-lg overflow-y-auto overflow-x-hidden scale-95 transition-transform duration-300"
+            id="modalContent">
+
+            <button onclick="toggleModal(false)"
+                class="absolute top-4 right-4 z-[60] p-2 bg-white/50 rounded-full hover:bg-white text-black">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+
+            <div
+                class="w-full md:w-1/2 bg-[#1a1a1a] relative flex items-center justify-center py-0 px-2 md:px-4 overflow-hidden shrink-0 min-h-[250px] md:min-h-0">
+                <img src="assets/bike_side_new.jpg" alt="VIGILANTE 5K"
+                    class="w-full h-full object-contain object-center drop-shadow-2xl">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 hidden md:flex pointer-events-none">
+                    <div>
+                        <h3 class="text-white font-tech text-3xl font-bold">VIGILANTE 5K</h3>
+                        <p class="text-white/80 text-sm">Reserve Yours Today</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 p-6 md:p-12 relative flex flex-col justify-center">
+                <div class="mb-6 md:mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-1 md:mb-2 font-tech uppercase">Order Now</h2>
+                    <p class="text-gray-500 text-xs md:text-sm">Experience the new era of performance.</p>
+                </div>
+
+                <form id="interestForm" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Full Name</label>
+                        <input type="text" id="interestName" required
+                            class="w-full bg-gray-50 border-b-2 border-gray-200 px-0 py-2 text-sm focus:outline-none focus:border-xaga-orange transition-all text-black placeholder-gray-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Phone Number</label>
+                        <input type="tel" id="interestMobile" required
+                            class="w-full bg-gray-50 border-b-2 border-gray-200 px-0 py-2 text-sm focus:outline-none focus:border-xaga-orange transition-all text-black placeholder-gray-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Email</label>
+                        <input type="email" id="interestEmail" required
+                            class="w-full bg-gray-50 border-b-2 border-gray-200 px-0 py-2 text-sm focus:outline-none focus:border-xaga-orange transition-all text-black placeholder-gray-400">
+                    </div>
+                    <div class="pt-4">
+                        <button type="submit"
+                            class="w-full bg-black text-white font-bold py-4 uppercase tracking-widest hover:bg-xaga-orange hover:text-white transition-all shadow-lg text-sm">
+                            <span id="interestBtnText">Confirm Interest</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+                <div>
+                    <a href="#" class="flex items-center gap-2 group mb-4">
+                        <img src="assets/logo_final.png" class="h-14 w-auto object-contain" alt="XAGA Logo">
+                    </a>
+                </div>
+            </div>
+            <div class="text-center md:text-left">
+                <p class="text-sm text-gray-500">&copy; 2026 XAGA Automotive. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

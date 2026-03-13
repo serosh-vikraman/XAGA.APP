@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Test Drive | XAGA Automotive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        xaga: {
+                            orange: '#ff4d00',
+                            black: '#0a0a0a',
+                            dark: '#141414',
+                            gray: '#f5f5f5',
+                            text: '#111111'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Michroma', 'sans-serif'],
+                        tech: ['Michroma', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        input,
+        select {
+            background: #f9fafb;
+            border-bottom: 2px solid #e5e7eb;
+            color: #111;
+            padding: 0.75rem 0;
+            width: 100%;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #ff4d00;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-xaga-text font-sans min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black border-b border-white/10 transition-all duration-300 shadow-lg" id="navbar">
+        <div class="w-full px-6 lg:px-12 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/logo_final.png" class="h-14 w-auto object-contain" alt="XAGA Logo">
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="vigilante5k.html"
+                    class="text-sm font-semibold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">VIGILANTE
+                    5K</a>
+                <a href="index.html#technology"
+                    class="text-sm font-semibold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Technology</a>
+                <a href="index.html#service"
+                    class="text-sm font-semibold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Service</a>
+                <a href="vigilante5k.html#ownership"
+                    class="text-sm font-semibold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Ownership</a>
+                <a href="find-store.html"
+                    class="text-sm font-semibold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Find
+                    a Store</a>
+                <a href="javascript:void(0)" onclick="toggleModal(true)"
+                    class="px-6 py-2 bg-white text-black hover:bg-xaga-orange hover:text-white transition-all uppercase text-xs font-bold tracking-widest rounded-full">Order
+                    Now</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-white focus:outline-none" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-black/95 transition-opacity duration-300 hidden opacity-0 flex items-center justify-center">
+        <nav class="flex flex-col gap-8 text-center">
+            <a href="vigilante5k.html" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Vigilante
+                5K</a>
+            <a href="index.html#technology" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Technology</a>
+            <a href="index.html#service" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Service</a>
+            <a href="vigilante5k.html#ownership" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Ownership</a>
+            <a href="find-store.html" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Find a
+                Store</a>
+            <a href="javascript:void(0)" onclick="toggleMobileMenu(); toggleModal(true)"
+                class="text-2xl font-tech uppercase text-xaga-orange hover:text-white transition-colors">Order Now</a>
+        </nav>
+    </div>
+
+    <!-- Content -->
+    <main class="flex-grow pt-24 pb-12 flex items-center justify-center relative overflow-hidden">
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+
+                <!-- Text / Info -->
+                <div class="space-y-6">
+                    <span class="text-xaga-orange uppercase tracking-widest font-bold text-sm">Experience the
+                        Future</span>
+                    <h1 class="font-tech text-4xl md:text-5xl lg:text-7xl font-black leading-none uppercase">Ride the
+                        <br> <span class="text-gray-400">Revolution</span>
+                    </h1>
+                    <p class="text-gray-600 leading-relaxed font-medium text-lg max-w-lg">
+                        Get behind the handlebars of the Vigilante 5K. Feel the instant torque and precision handling
+                        that sets XAGA apart.
+                    </p>
+                    <div class="flex items-center gap-4 text-sm font-bold text-gray-500 mt-4 uppercase tracking-wider">
+                        <span>✓ Valid License Required</span>
+                        <span>✓ Helmet Provided</span>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="bg-white p-8 md:p-12 shadow-2xl relative rounded-2xl border border-gray-100">
+                    <form id="bookingForm" class="space-y-6">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label
+                                    class="block text-xs uppercase tracking-widest text-gray-400 font-bold mb-1">First
+                                    Name</label>
+                                <input type="text" id="bookingFirstName" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-400 font-bold mb-1">Last
+                                    Name</label>
+                                <input type="text" id="bookingLastName" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-400 font-bold mb-1">Email
+                                Address</label>
+                            <input type="email" id="bookingEmail" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-400 font-bold mb-1">Phone
+                                Number</label>
+                            <input type="tel" id="bookingMobile" required>
+                        </div>
+
+                        <div>
+                            <label
+                                class="block text-xs uppercase tracking-widest text-gray-400 font-bold mb-1">Preferred
+                                Location</label>
+                            <select id="bookingLocation">
+                                <option>Mumbai - Bandra West</option>
+                                <option>Bangalore - Indiranagar</option>
+                                <option>Delhi - Cyber Hub</option>
+                                <option>Hyderabad - Jubilee Hills</option>
+                            </select>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-black text-white font-bold py-5 mt-4 uppercase tracking-widest hover:bg-xaga-orange transition-all shadow-lg rounded-lg">
+                            <span id="bookingBtnText">Confirm Booking</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white py-12 text-center text-gray-400 text-xs border-t border-gray-100">
+        <div class="container mx-auto flex flex-col items-center justify-center mb-6">
+            <a href="#" class="flex items-center gap-2 group mb-4">
+                <img src="assets/logo_final.png" class="h-14 w-auto object-contain" alt="XAGA Logo">
+            </a>
+        </div>
+        &copy; 2026 XAGA Automotive. All Rights Reserved.
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations | XAGA Automotive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        xaga: {
+                            orange: '#ff4d00',
+                            black: '#0a0a0a',
+                            dark: '#141414',
+                            gray: '#f5f5f5',
+                            text: '#111111'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Michroma', 'sans-serif'],
+                        tech: ['Michroma', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-white text-xaga-text font-sans min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black border-b border-white/10 transition-all duration-300 shadow-lg" id="navbar">
+        <div class="w-full px-6 lg:px-12 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/logo_final.png" class="h-14 w-auto object-contain" alt="XAGA Logo">
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="vigilante5k.html"
+                    class="text-sm font-bold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">VIGILANTE
+                    5K</a>
+                <a href="index.html#technology"
+                    class="text-sm font-bold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Technology</a>
+                <a href="index.html#service"
+                    class="text-sm font-bold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Service</a>
+                <a href="vigilante5k.html#ownership"
+                    class="text-sm font-bold uppercase tracking-wider text-white hover:text-xaga-orange transition-colors">Ownership</a>
+                <a href="find-store.html"
+                    class="text-sm font-bold uppercase tracking-wider text-xaga-orange transition-colors">Find
+                    a Store</a>
+                <a href="javascript:void(0)" onclick="toggleModal(true)"
+                    class="px-6 py-2 bg-white text-black hover:bg-xaga-orange hover:text-white transition-all uppercase text-xs font-bold tracking-widest rounded-full">Order
+                    Now</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-white focus:outline-none" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-black/95 transition-opacity duration-300 hidden opacity-0 flex items-center justify-center">
+        <nav class="flex flex-col gap-8 text-center">
+            <a href="vigilante5k.html" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Vigilante
+                5K</a>
+            <a href="index.html#technology" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Technology</a>
+            <a href="index.html#service" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Service</a>
+            <a href="vigilante5k.html#ownership" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Ownership</a>
+            <a href="find-store.html" onclick="toggleMobileMenu()"
+                class="text-2xl font-tech uppercase text-xaga-orange hover:text-white transition-colors">Find a
+                Store</a>
+            <a href="javascript:void(0)" onclick="toggleMobileMenu(); toggleModal(true)"
+                class="text-2xl font-tech uppercase text-white hover:text-xaga-orange transition-colors">Order Now</a>
+        </nav>
+    </div>
+
+    <!-- Pre-Order Modal (Reused) -->
+    <div id="preOrderModal" class="fixed inset-0 z-[100] hidden opacity-0 transition-opacity duration-300" role="dialog"
+        aria-modal="true">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="toggleModal(false)"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl bg-white text-black shadow-2xl flex flex-col md:flex-row rounded-lg overflow-hidden scale-95 transition-transform duration-300"
+            id="modalContent">
+            <button onclick="toggleModal(false)"
+                class="absolute top-4 right-4 z-[60] p-2 bg-white/50 rounded-full hover:bg-white text-black">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <div class="w-full md:w-1/2 bg-gray-100 relative flex items-center justify-center p-0 overflow-hidden">
+                <img src="assets/bike_side_new.jpg" alt="VIGILANTE 5K" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                    <div>
+                        <h3 class="text-white font-tech text-3xl font-bold">VIGILANTE 5K</h3>
+                        <p class="text-white/80 text-sm">Reserve Yours Today</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 p-8 md:p-12 relative flex flex-col justify-center">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-2 font-tech uppercase">Order Now</h2>
+                    <p class="text-gray-500 text-sm">Experience the new era of performance.</p>
+                </div>
+                <form
+                    onsubmit="event.preventDefault(); alert('We have received your request! A specialist will contact you shortly.'); toggleModal(false);"
+                    class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Full Name</label>
+                        <input type="text" required
+                            class="w-full bg-gray-50 border-b-2 border-gray-200 px-0 py-2 text-sm focus:outline-none focus:border-xaga-orange transition-all text-black placeholder-gray-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Phone Number</label>
+                        <input type="tel" required
+                            class="w-full bg-gray-50 border-b-2 border-gray-200 px-0 py-2 text-sm focus:outline-none focus:border-xaga-orange transition-all text-black placeholder-gray-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Email</label>
+                        <input type="email" required
+                            class="w-full bg-gray-50 border-b-2 border-gray-200 px-0 py-2 text-sm focus:outline-none focus:border-xaga-orange transition-all text-black placeholder-gray-400">
+                    </div>
+                    <div class="pt-4">
+                        <button type="submit"
+                            class="w-full bg-black text-white font-bold py-4 uppercase tracking-widest hover:bg-xaga-orange hover:text-white transition-all shadow-lg text-sm">Confirm
+                            Interest</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <main class="flex-grow pt-32 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-xaga-orange uppercase tracking-widest font-bold text-sm">Experience Center</span>
+                <h1 class="font-tech text-4xl md:text-5xl font-bold mt-2 text-black">FIND A <span
+                        class="text-gray-400">STORE</span></h1>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Store Card 1 -->
+                <div
+                    class="bg-white p-8 border border-gray-100 shadow-xl hover:shadow-2xl transition-all group rounded-xl">
+                    <h3 class="font-tech text-2xl font-bold mb-2 group-hover:text-xaga-orange transition-colors">MUMBAI
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-4 font-bold uppercase">The XAGA Flagship</p>
+                    <p class="text-gray-600 leading-relaxed mb-6 font-medium">
+                        Plot 12, Linking Road,<br>
+                        Bandra West, Mumbai 400050<br>
+                        Maharashtra
+                    </p>
+                    <a href="https://maps.google.com" target="_blank"
+                        class="inline-flex items-center gap-2 text-black text-sm font-bold uppercase tracking-widest hover:text-xaga-orange transition-colors">
+                        Get Directions <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Store Card 2 -->
+                <div
+                    class="bg-white p-8 border border-gray-100 shadow-xl hover:shadow-2xl transition-all group rounded-xl">
+                    <h3 class="font-tech text-2xl font-bold mb-2 group-hover:text-xaga-orange transition-colors">
+                        BANGALORE
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-4 font-bold uppercase">Tech Hub Experience</p>
+                    <p class="text-gray-600 leading-relaxed mb-6 font-medium">
+                        100ft Road, Indiranagar,<br>
+                        Near Metro Station, Bangalore 560038<br>
+                        Karnataka
+                    </p>
+                    <a href="https://maps.google.com" target="_blank"
+                        class="inline-flex items-center gap-2 text-black text-sm font-bold uppercase tracking-widest hover:text-xaga-orange transition-colors">
+                        Get Directions <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Store Card 3 -->
+                <div
+                    class="bg-white p-8 border border-gray-100 shadow-xl hover:shadow-2xl transition-all group rounded-xl">
+                    <h3 class="font-tech text-2xl font-bold mb-2 group-hover:text-xaga-orange transition-colors">DELHI
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-4 font-bold uppercase">Capital Showroom</p>
+                    <p class="text-gray-600 leading-relaxed mb-6 font-medium">
+                        DLF Cyber Hub, Building 10,<br>
+                        Gurugram 122002<br>
+                        NCR
+                    </p>
+                    <a href="https://maps.google.com" target="_blank"
+                        class="inline-flex items-center gap-2 text-black text-sm font-bold uppercase tracking-widest hover:text-xaga-orange transition-colors">
+                        Get Directions <span>→</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white py-12 text-center text-gray-400 text-xs border-t border-gray-100">
+        <div class="container mx-auto flex flex-col items-center justify-center mb-6">
+            <a href="#" class="flex items-center gap-2 group mb-4">
+                <img src="assets/logo_final.png" class="h-14 w-auto object-contain" alt="XAGA Logo">
+            </a>
+        </div>
+        &copy; 2026 XAGA Automotive. All Rights Reserved.
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
